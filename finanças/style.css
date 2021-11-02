@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    background: rgba(3, 59, 3, 0.979);
+    padding: 2rem 0 10rem;
+    text-align: center;
+}
+
+#logo{
+    color: #fff;
+    font-weight: 100;
+}
