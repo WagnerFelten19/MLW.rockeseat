@@ -42,11 +42,11 @@
 
         </section>
         
-        <section id="transicao">
+        <section id="transacao">
 
-            <h2>Transsações</h2>
+            <h2 class="sr-only">Transsações</h2>
 
-            <a class="button-new" href="#">+ Nova Transação</a>
+            <a onclick="Modal.open()" class="button-new" href="#">+ Nova Transação</a>
 
             <table id="data-tabela">
                 <thead>
@@ -60,7 +60,7 @@
                 
                 <tbody>
                     <tr>
-                        <td class="saida">Luz</td>
+                        <td class="descricao">Luz</td>
                         <td class="entrada">R$ 200,00</td>
                         <td class="data">20/10/2021</td>
                         <td>
@@ -69,14 +69,14 @@
                     </tr> 
 
                     <tr>  
-                        <td class="saida">internet</td>
+                        <td class="descricao">internet</td>
                         <td class="entrada">R$ 110,00</td>
                         <td class="data">13/10/2021</td>
                         <td>
                             <img src="/finanças/imagens/minus.svg" alt="Remover Transação">
                         </td>
                     </tr>
-                        <td class="saida">web sait</td>
+                        <td class="descricao">web sait</td>
                         <td class="entrada">R$ 5.000,00</td>
                         <td class="data">10/10/2021</td>
                         <td>
@@ -102,12 +102,33 @@
                     
                     <form action="">
                         <div class="input-group">
+                        </div>
+
+                        <div class="input-group">
                             <label class="sr-only" for="description">Descrição</label>
                             <input type="text" id="description" name="description" placeholder="Descrição">
 
-                            <label for=""></label>
-                            <input type="number" id="amount" name="description" placeholder="Descrição">
                         </div>
+                        
+                        <div class="input-group">
+                            <label class="sr-only" for="amount">Valor</label>
+                            <input type="number" id="amount" name="amount" placeholder="0,00" step="0.01">
+                        
+                            <small class="help">
+                                Use o sinal de - (negativo) para despesas e , (virgula) para casas decimais...
+                            </small>
+                        </div>
+
+                        <div class="">
+                            <label class="sr-only" for="date">Data</label>
+                            <input type="date" id="date" name="date" placeholder="01/01/2021">
+                        </div>   
+
+                        <div class="input-group actions">
+                            <a onclick="Modal.close()" href="#" class="button cancel">Cancelar</a>
+                            <button>Salvar</button>
+                        </div>
+
                     </form>
 
                 </div>    
@@ -119,6 +140,9 @@
     </div>
 
     <footer><p>Dev.Finaças</p></footer>
+
+    <script src="/finanças/js/index.js"></script>
+
 </body>
 
 </html>
