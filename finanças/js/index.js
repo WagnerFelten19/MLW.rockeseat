@@ -18,7 +18,8 @@ const Modal = {
     }
 }
 
-const transacao = [{
+const transacao = [
+    {
         id: 1,
         descricao: 'Luz',
         entrada: -50000,
@@ -57,17 +58,27 @@ const transacao = {
 }
 
 const DOM = {
-    innerHTMLTransaction(){
+    transacaoContainer: document.querySelector('#data-table tbody'),
+    
+    addTransacao(transacao, index){
+        const tr = document.createElement('tr')
+        tr.innerHTML = DOM.innerHTMLTransacao(transacao)
+    },
+
+    innerHTMLTransacao(transacao){
         const html = `
-        <tr>  
-        <td class="descricao">internet</td>
-        <td class="entrada">R$ 110,00</td>
-        <td class="data">13/10/2021</td>
+        
+        <td class="descricao">${transacao.descricao}</td>
+        <td class="entrada">${transacao.entrada}</td>
+        <td class="data">${transacao.data}</td>
         <td>
             <img src="/finanças/imagens/minus.svg" alt="Remover Transação">
         </td>
-    </tr>
         `
+
+        return html
     }
 }
+
+DOM.addTransacao(transacao[0])
 
