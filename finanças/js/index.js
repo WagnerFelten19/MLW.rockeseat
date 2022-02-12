@@ -38,7 +38,15 @@ const transacao = [
         descricao: 'internet',
         entrada: -20000,
         data: '23/01;2021'
+    },
+
+    {
+        id: 4,
+        descricao: 'app',
+        entrada: 200000,
+        data: '27/02;2021'
     }
+
 ]
 
 
@@ -81,4 +89,10 @@ const DOM = {
 }
 
 DOM.addTransacao(transacao[0])
+DOM.addTransacao(transacao[1])
+DOM.addTransacao(transacao[2])
 
+
+transacao.forEach(function(transacao){
+    DOM.addTransacao(transacao)
+})
